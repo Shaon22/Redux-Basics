@@ -8,8 +8,8 @@ function App() {
   const {count}=counter
 const dispatch=useAppDispatch()
 
-const handleIncrement=()=>{
-  dispatch(increment())
+const handleIncrement=(amount : number)=>{
+  dispatch(increment(amount))
 }
 const handleDecrement=()=>{
   dispatch(decrement())
@@ -18,7 +18,8 @@ const handleDecrement=()=>{
     <div>
       <h1>counter with redux</h1>
       <div>{count}</div>
-      <button onClick={handleIncrement}>Increament</button>
+      <button onClick={()=>handleIncrement(1)}>Increament</button>
+      <button onClick={()=>handleIncrement(5)}>Increament by 5</button>
       <button onClick={handleDecrement}>Decreament</button>
     </div>
   )
